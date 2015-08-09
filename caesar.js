@@ -10,8 +10,10 @@ function caesar() {
             output[i]=(input[i].charCodeAt()-97+shift)%26;
         }
     }
-    
-    return output.join(" ");
+    for (i = 0; i < output.length; i++) {
+        output[i]=String.fromCharCode(output[i]+97);
+    }
+    return output.join("");
 }
 
 function update(){

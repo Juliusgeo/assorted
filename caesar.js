@@ -4,22 +4,19 @@ function caesar() {
     output = "";
     var shift = document.getElementById("in").value;
     var input = document.getElementById("input").value;
-    var words = input.split(" ");
-    for (i = 0; i < words.length; i++) {
-        word = words[i].toLowerCase();
-        words[i]="";
-        for(k=0; k<word.length; k++){
-            words[i]+=words[i].charCodeAt(k)%26+97;
+    var output = [];
+    for (i = 0; i < input.length; i++) {
+        if (input[i] !== " ") {
+            output[i]=(input[i].charCodeAt()-97+shift)%26;
         }
     }
-    for (i = 0; i < words.length; i++) {
-        output = output + words[i] + " ";
-    }
-};
+    
+    return output.join(" ");
+}
 
 function update(){
-	caesar();
-    document.getElementById("out").value = output;
+	
+    document.getElementById("out").value = caesar();
 	setInterval(function () {if(document.getElementById("input").value == ""){document.getElementById("out").value = ""}}, 3);
 
 }

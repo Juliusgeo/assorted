@@ -1,2 +1,2 @@
 # assorted
-A bunch of translating things to test out my javascript skillz.
+A bunch of translating things to test out my javascript skills.
